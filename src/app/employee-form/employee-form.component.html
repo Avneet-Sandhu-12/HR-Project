@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Edit User' : 'Add User' }}</h2>
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input matInput formControlName="firstName" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Age</mat-label>
+    <input matInput formControlName="age" type="number" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Contact Number</mat-label>
+    <input matInput formControlName="contactNumber" required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Date of Birth</mat-label>
+    <input matInput formControlName="dob" type="date" required />
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button type="button" (click)="close()">Close</button>
+    <button mat-button type="submit" [disabled]="!employeeForm.valid">Update</button>
+  </div>
+</form>

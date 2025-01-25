@@ -1,0 +1,27 @@
+<div>
+    <h2>Employees by Age Group</h2>
+    <canvas baseChart
+            [data]="barChartData"
+            [options]="barChartOptions"
+            chartType="bar">
+    </canvas>
+  </div>
+  
+  <div>
+    <h2>Profession Distribution</h2>
+    <canvas baseChart
+            [data]="pieChartData"
+            [options]="pieChartOptions"
+            chartType="pie">
+    </canvas>
+  </div>
+  
+  <div>
+    <h2>Average Claimed Amount Per Month</h2>
+    <canvas baseChart
+            [data]="lineChartData"
+            [options]="lineChartOptions"
+            chartType="line">
+    </canvas>
+  </div>
+  

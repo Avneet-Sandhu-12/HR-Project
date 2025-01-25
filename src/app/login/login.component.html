@@ -1,0 +1,21 @@
+<div class="login-container">
+  <h2>{{ isLoginMode ? 'Login' : 'Signup' }} Here</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required minlength="8" />
+    </div>
+    <button type="submit" class="app-login-button">
+      {{ isLoginMode ? 'Login' : 'Signup' }}
+    </button>
+    <p>{{ isLoginMode ? 'Don\'t have an account yet?' : 'Already have an account?' }}</p>
+    <button class="app-toggle-btn" type="button" (click)="onSwitchMode()">
+      {{ isLoginMode ? 'Register Here' : 'Login Here' }}
+    </button>
+  </form>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>

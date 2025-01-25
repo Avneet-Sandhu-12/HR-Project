@@ -1,0 +1,140 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #333;
+  color: #fff;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.nav-links a:hover {
+  color: #ff9800;
+}
+.nav-links a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #ff9800;
+} 
+
+
+@media (max-width: 768px) {
+  .nav-links {
+  display: none; 
+  flex-direction: column;
+  position: absolute;
+  top: 80px; 
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 30px;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+  .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .nav-links a:hover {
+    color: #ff9800;
+  }
+  .nav-links a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #ff9800;
+  } 
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: right;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+  }
+
+  .filter-bar input, .filter-bar select, .filter-bar button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-links a:hover {
+    color: #ff9800;
+  }
+  .nav-links a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #ff9800;
+  } 
+}
+

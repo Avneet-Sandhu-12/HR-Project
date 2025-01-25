@@ -1,0 +1,93 @@
+
+<div *ngIf="loading$ | async" class="spinner-container">
+  <mat-spinner color="primary"></mat-spinner>
+</div>
+<button mat-raised-button color="primary" (click)="addUser()">+ Add New Employee</button>
+
+<div *ngIf="!(loadingService.loading$ | async) && !error">
+ 
+  <input
+    type="text"
+    placeholder="Search by name..."
+    [(ngModel)]="searchName"
+    class="search-input"
+    (input)="updatePaginatedEmployees()"
+  />
+
+  
+  <select [(ngModel)]="selectedAge" class="age-filter" (change)="updatePaginatedEmployees()">
+    <option value="">Filter by age</option>
+    <option *ngFor="let age of ageOptions" [value]="age">{{ age }}</option>
+  </select>
+
+  <button class="reset" (click)="resetFilters()">Reset Filters</button>
+</div>
+
+<div *ngIf="paginatedEmployees.length === 0" class="no-data-message">
+  No records found.
+</div>
+
+
+<table mat-table [dataSource]="paginatedEmployees" class="mat-elevation-z8">
+
+  
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>#</th>
+    <td mat-cell *matCellDef="let user">{{ user.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef>First</th>
+    <td mat-cell *matCellDef="let user">{{ user.firstName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef>Last</th>
+    <td mat-cell *matCellDef="let user">{{ user.lastName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let user">{{ user.email }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef (click)="sortData('age')" [class.sort-active]="sortColumn === 'age'">
+      Age ↑↓
+      <span *ngIf="sortColumn === 'age'">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+    </th>
+    <td mat-cell *matCellDef="let user">{{ user.age }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="contactNumber">
+    <th mat-header-cell *matHeaderCellDef (click)="sortData('contactNumber')" 
+      [class.sort-active]="sortColumn === 'contactNumber'">
+      Contact Number ↑↓
+      <span *ngIf="sortColumn === 'contactNumber'">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+    </th>
+    <td mat-cell *matCellDef="let user">{{ user.contactNumber }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="dob">
+    <th mat-header-cell *matHeaderCellDef>Dob</th>
+    <td mat-cell *matCellDef="let user">{{ user.dob }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let user">
+      <button (click)="editUser(user)">Edit</button>
+      <button (click)="deleteUser(user.id)">Delete</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+<mat-paginator
+  [length]="sortedFilteredUsers().length"
+  [pageSize]="10"
+  [pageSizeOptions]="[10, 20, 50]"
+  (page)="paginate($event)">
+</mat-paginator>

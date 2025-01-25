@@ -1,0 +1,91 @@
+{
+  "medicalPolicies": [
+    {
+      "id": "1001",
+      "dependents": 1,
+      "policyName": "xyz",
+      "claimedAmount": 50022,
+      "salary": 500000,
+      "policyMaxAmount": 1000000
+    },
+    {
+      "dependents": 2,
+      "policyName": "abc",
+      "claimedAmount": 150000,
+      "salary": 700000,
+      "policyMaxAmount": 1750000,
+      "id": "1002"
+    },
+    {
+      "id": "d9a5",
+      "dependents": 3,
+      "policyName": "asad",
+      "claimedAmount": 50000,
+      "salary": 600000,
+      "policyMaxAmount": 1500000
+    },
+    {
+      "dependents": 4,
+      "policyName": "care plus",
+      "claimedAmount": 521468,
+      "salary": 1200000,
+      "policyMaxAmount": 3000000,
+      "id": "b06c"
+    },
+    {
+      "id": "b85b",
+      "dependents": 2,
+      "policyName": "basic",
+      "claimedAmount": 2500,
+      "salary": 50000,
+      "policyMaxAmount": 1000000
+    }
+  ],
+  "employees": [
+    {
+      "age": 25,
+      "profession": "Engineer",
+      "claimedAmount": 5000,
+      "month": "January",
+      "id": "bb5d"
+    },
+    {
+      "age": 32,
+      "profession": "Doctor",
+      "claimedAmount": 7000,
+      "month": "February",
+      "id": "4837"
+    },
+    {
+      "age": 45,
+      "profession": "Engineer",
+      "claimedAmount": 4000,
+      "month": "March",
+      "id": "7fe1"
+    },
+    {
+      "age": 29,
+      "profession": "Teacher",
+      "claimedAmount": 3000,
+      "month": "April",
+      "id": "94eb"
+    },
+    {
+      "age": 52,
+      "profession": "Doctor",
+      "claimedAmount": 6000,
+      "month": "May",
+      "id": "4dcb"
+    }
+  ],
+  "users": [
+    {
+      "username": "avneet",
+      "password": "sandhu123"
+    },
+    {
+      "username": "sandhu",
+      "password": "avneet123"
+    }
+  ]
+}

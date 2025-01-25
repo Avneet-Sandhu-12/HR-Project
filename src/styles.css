@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --primary-bg-color: #ffffff;
+    --primary-text-color: #000000;
+    --accent-color: #3f51b5;
+  }
+  
+
+  .dark-theme {
+    --primary-bg-color: #303030;
+    --primary-text-color: #ffffff;
+    --accent-color: #ff4081;
+  }
+ 
+  body {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    font-family: Arial, sans-serif;
+  }
+  
+
+  button {
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  body.dark-theme {
+    background-color: #333;
+    color: white;
+  }
+  
+  body.dark-theme mat-form-field {
+    color: white;
+  }
+  
+  body.dark-theme .mat-form-field-label {
+    color: #bbb;
+  }
+  

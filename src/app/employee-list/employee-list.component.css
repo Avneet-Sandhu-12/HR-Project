@@ -1,0 +1,27 @@
+/* Base styling for the button */
+button {
+    background-color: #4c87af; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove default borders */
+    padding: 10px 10px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    font-weight: bold; /* Make text bold */
+    border-radius: 5px; /* Slightly round corners */
+    cursor: pointer; /* Add pointer cursor */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition effect */
+    margin-top: 10px;
+  }
+  
+  /* Hover effect */
+  button:hover {
+    background-color: #45a046; /* Darker green on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  }
+  
+  /* Active state */
+  button:active {
+    background-color: #3e8e8e; /* Slightly darker green */
+    transform: translateY(2px); /* Add press-down effect */
+  }
+  

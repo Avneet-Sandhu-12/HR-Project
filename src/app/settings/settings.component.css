@@ -1,0 +1,17 @@
+mat-card {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  select {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  mat-slide-toggle {
+    display: block;
+    margin: 20px 0;
+  }
+  

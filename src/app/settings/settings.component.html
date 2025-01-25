@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>{{ 'SETTINGS' | translate }}</mat-card-title>
+    <mat-card-content>
+     
+      <div>
+        <label>{{ 'LANGUAGE' | translate }}:</label>
+        <select [(ngModel)]="selectedLanguage" (change)="switchLanguage(selectedLanguage)">
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+  
+     
+      <mat-slide-toggle [(ngModel)]="isDarkMode" (change)="toggleTheme()">
+        {{ 'DARK_MODE' | translate }}
+      </mat-slide-toggle>
+  
+     
+      <mat-slide-toggle [(ngModel)]="notificationsEnabled" (change)="toggleNotifications()">
+        Enable HR Notifications
+      </mat-slide-toggle>
+      <button (click)="logout()">Logout</button>
+    </mat-card-content>
+  </mat-card>
+ 
+  
